@@ -6,12 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#100d16">
 <title>The System Forgot My Existence</title>
-  <img
-  src="Screenshot_20261027-231143_1.png"
-  alt="The System Forgot My Existence"
-  class="book-cover"
->
 <meta name="description" content="Enter the world of The System Forgot My Existence, a dark fantasy novel about Kael Veyr, the unregistered anomaly.">
+
 <style>
 :root {
   --bg: #100d16;
@@ -21,8 +17,10 @@
   --text: #f4eff7;
   --muted: #b7acbf;
 }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
   background: var(--bg);
@@ -30,7 +28,9 @@ body {
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1.7;
 }
+
 a { color: inherit; text-decoration: none; }
+
 header {
   padding: 18px 7%;
   display: flex;
@@ -39,10 +39,12 @@ header {
   gap: 16px;
   border-bottom: 1px solid #342537;
 }
+
 .brand { color: var(--gold); font-weight: bold; }
 nav { display: flex; gap: 18px; flex-wrap: wrap; }
 nav a { color: var(--muted); font-size: 14px; }
 nav a:hover, a:hover { color: var(--gold); }
+
 .hero {
   min-height: 76vh;
   padding: 90px 8%;
@@ -54,21 +56,31 @@ nav a:hover, a:hover { color: var(--gold); }
     linear-gradient(135deg, #100d16, #211321 65%, #100d16);
   border-bottom: 1px solid #49303d;
 }
+
 .eyebrow {
   color: var(--gold);
   text-transform: uppercase;
   letter-spacing: 4px;
   font: 12px Arial, sans-serif;
 }
+
 h1 {
   max-width: 850px;
   font-size: clamp(38px, 8vw, 76px);
   line-height: 1.08;
   margin: 22px 0;
 }
+
 h1 span { color: var(--red); }
 .hero p { max-width: 620px; color: var(--muted); }
-.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px; }
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
 .btn {
   display: inline-block;
   padding: 12px 20px;
@@ -78,35 +90,47 @@ h1 span { color: var(--red); }
   font: bold 13px Arial, sans-serif;
   letter-spacing: 1px;
 }
-.btn.secondary { background: transparent; border-color: #68516a; }
+
+.btn.secondary {
+  background: transparent;
+  border-color: #68516a;
+}
+
 section { padding: 65px 8%; }
+
 .section-label {
   color: var(--red);
   text-transform: uppercase;
   letter-spacing: 3px;
   font: 12px Arial, sans-serif;
 }
+
 h2 { font-size: clamp(27px, 5vw, 40px); margin: 8px 0 18px; }
 .intro { color: var(--muted); max-width: 700px; }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
   gap: 18px;
   margin-top: 28px;
 }
+
 .card {
   background: var(--panel);
   border: 1px solid #35273b;
   padding: 24px;
 }
+
 .card h3 { color: var(--gold); margin-top: 0; }
 .card p { color: var(--muted); }
+
 .tag {
   color: #f08c9c;
   font: 11px Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
 .quote {
   border-left: 3px solid var(--red);
   padding: 10px 0 10px 22px;
@@ -114,7 +138,35 @@ h2 { font-size: clamp(27px, 5vw, 40px); margin: 8px 0 18px; }
   font-size: 22px;
   max-width: 720px;
 }
+
 .notice { font-size: 13px; color: var(--muted); }
+
+.chapter-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 9px 14px;
+  border: 1px solid var(--red);
+  color: var(--text);
+  font: bold 12px Arial, sans-serif;
+  letter-spacing: 1px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.chapter-link:hover {
+  background: var(--red);
+  color: white;
+}
+
+.book-cover {
+  display: block;
+  width: 220px;
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
 footer {
   padding: 30px 8%;
   border-top: 1px solid #342537;
@@ -122,25 +174,16 @@ footer {
   font-size: 13px;
   text-align: center;
 }
+
 @media (max-width: 520px) {
   header { align-items: flex-start; flex-direction: column; }
   nav { gap: 14px; }
   .hero { min-height: 65vh; padding: 65px 7%; }
   section { padding: 48px 7%; }
 }
-  
-.book-cover {
-  display: block;
-  width: 220px;
-  max-width: 80%;
-  height: auto;
-  margin: 24px auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-    }
-                
 </style>
 </head>
+
 <body>
 <header>
   <a class="brand" href="#">THE UNREGISTERED</a>
@@ -148,7 +191,7 @@ footer {
     <a href="#story">The Story</a>
     <a href="#chapters">Chapters</a>
     <a href="#characters">Characters</a>
-    <a href="#lore">World & Lore</a>
+    <a href="#lore">World &amp; Lore</a>
   </nav>
 </header>
 
@@ -170,6 +213,13 @@ footer {
   <section id="story">
     <div class="section-label">The Premise</div>
     <h2>A world that has no place for him.</h2>
+
+    <img
+      src="Screenshot_20261027-231143_1.png"
+      alt="Cover of The System Forgot My Existence"
+      class="book-cover"
+    >
+
     <p class="intro">
       In a world where awakening determines a person's future,
       Kael Veyr faces a result no one understands. The system
@@ -189,27 +239,45 @@ footer {
     <div class="section-label">Begin Reading</div>
     <h2>The Chapters</h2>
     <p class="intro">
-      Enter the story from the beginning. More chapters will be
-      added here as they are prepared for the website.
+      Enter Kael Veyr's story from the beginning. Read the chapters
+      on Webnovel and follow the mystery of the unregistered anomaly.
     </p>
+
     <div class="grid">
       <article class="card">
         <div class="tag">Chapter 01</div>
         <h3>The Man Who Failed to Awaken</h3>
         <p>The ceremony ends. The questions begin.</p>
-        <p class="notice">Full chapter coming soon.</p>
+        <a
+          class="chapter-link"
+          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805/the-man-who-failed-to-awaken_99892615255737078"
+          target="_blank"
+          rel="noopener noreferrer"
+        >READ CHAPTER 1 →</a>
       </article>
+
       <article class="card">
         <div class="tag">Chapter 02</div>
-        <h3>A New Chapter</h3>
+        <h3>The Morning After</h3>
         <p>The story continues beyond the awakening ceremony.</p>
-        <p class="notice">Title and full chapter to be added.</p>
+        <a
+          class="chapter-link"
+          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805/the-morning-after_99916897390228628"
+          target="_blank"
+          rel="noopener noreferrer"
+        >READ CHAPTER 2 →</a>
       </article>
+
       <article class="card">
         <div class="tag">Chapter 03</div>
         <h3>A Place for the Unwanted</h3>
         <p>A warehouse job, a sealed container, and a record that should not exist.</p>
-        <p class="notice">Full chapter coming soon.</p>
+        <a
+          class="chapter-link"
+          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805/a-place-for-the-unwanted_99963738303555549"
+          target="_blank"
+          rel="noopener noreferrer"
+        >READ CHAPTER 3 →</a>
       </article>
     </div>
   </section>
@@ -217,6 +285,7 @@ footer {
   <section id="characters">
     <div class="section-label">The People Behind the Mystery</div>
     <h2>Characters</h2>
+
     <div class="grid">
       <article class="card">
         <div class="tag">The Unregistered</div>
@@ -226,6 +295,7 @@ footer {
           His true connection to it remains unknown.
         </p>
       </article>
+
       <article class="card">
         <div class="tag">The Unknown</div>
         <h3>More to Be Revealed</h3>
@@ -239,21 +309,25 @@ footer {
 
   <section id="lore">
     <div class="section-label">Beyond the Surface</div>
-    <h2>World & Lore</h2>
+    <h2>World &amp; Lore</h2>
+
     <div class="grid">
       <article class="card">
         <h3>The Awakening</h3>
         <p>A defining event that shapes the paths people are expected to follow.</p>
       </article>
+
       <article class="card">
         <h3>The System</h3>
         <p>A force that records identities and governs the world's accepted rules.</p>
       </article>
+
       <article class="card">
         <h3>The Unregistered</h3>
         <p>What happens when a person exists beyond the records? The answer remains hidden.</p>
       </article>
     </div>
+
     <p class="notice">
       This section will expand as the world is revealed in the novel.
       Spoilers will be handled carefully.
@@ -267,5 +341,4 @@ footer {
   <p>All rights reserved by the author. Unauthorised reproduction is prohibited.</p>
 </footer>
 </body>
-  </html>
-      
+</html>
