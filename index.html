@@ -105,7 +105,11 @@ section { padding: 65px 8%; }
   font: 12px Arial, sans-serif;
 }
 
-h2 { font-size: clamp(27px, 5vw, 40px); margin: 8px 0 18px; }
+h2 {
+  font-size: clamp(27px, 5vw, 40px);
+  margin: 8px 0 18px;
+}
+
 .intro { color: var(--muted); max-width: 700px; }
 
 .grid {
@@ -167,6 +171,26 @@ h2 { font-size: clamp(27px, 5vw, 40px); margin: 8px 0 18px; }
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
 
+/* Kael Veyr character portrait */
+.character-image {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin: 0 auto 22px;
+  border-radius: 10px;
+  border: 1px solid #49303d;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.character-card {
+  text-align: center;
+}
+
+.character-card p {
+  text-align: left;
+}
+
 footer {
   padding: 30px 8%;
   border-top: 1px solid #342537;
@@ -176,10 +200,21 @@ footer {
 }
 
 @media (max-width: 520px) {
-  header { align-items: flex-start; flex-direction: column; }
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   nav { gap: 14px; }
-  .hero { min-height: 65vh; padding: 65px 7%; }
+
+  .hero {
+    min-height: 65vh;
+    padding: 65px 7%;
+  }
+
   section { padding: 48px 7%; }
+
+  .character-image { max-width: 260px; }
 }
 </style>
 </head>
@@ -226,10 +261,12 @@ footer {
       searches for him, detects him, and then fails to recognize
       his existence.
     </p>
+
     <p class="intro">
       An impossible message. A forgotten identity. And a mystery
       buried deeper than anyone dares to look.
     </p>
+
     <div class="quote">
       “Warning: The System has no record of your existence.”
     </div>
@@ -238,6 +275,7 @@ footer {
   <section id="chapters">
     <div class="section-label">Begin Reading</div>
     <h2>The Chapters</h2>
+
     <p class="intro">
       Enter Kael Veyr's story from the beginning. Read the chapters
       on Webnovel and follow the mystery of the unregistered anomaly.
@@ -279,7 +317,7 @@ footer {
           rel="noopener noreferrer"
         >READ CHAPTER 3 →</a>
       </article>
-      
+
       <article class="card">
         <div class="tag">Chapter 04</div>
         <h3>Coming Soon</h3>
@@ -294,12 +332,24 @@ footer {
     <h2>Characters</h2>
 
     <div class="grid">
-      <article class="card">
+      <article class="card character-card">
+        <img
+          src="kael-veyr.png"
+          alt="Kael Veyr, The Unregistered"
+          class="character-image"
+          loading="lazy"
+        >
+
         <div class="tag">The Unregistered</div>
         <h3>Kael Veyr</h3>
+
         <p>
           A young man rejected by the system that defines his world.
           His true connection to it remains unknown.
+        </p>
+
+        <p class="notice">
+          Not a hero. Not a villain. Just someone the system forgot.
         </p>
       </article>
 
@@ -348,4 +398,5 @@ footer {
   <p>All rights reserved by the author. Unauthorised reproduction is prohibited.</p>
 </footer>
 </body>
-</html>
+  </html>
+          
