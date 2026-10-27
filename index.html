@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100d16">
+<title>The System Forgot My Existence</title>
+<meta name="description" content="Enter the world of The System Forgot My Existence, a dark fantasy novel about Kael Veyr, the unregistered anomaly.">
+<style>
+:root {
+  --bg: #100d16;
+  --panel: #191421;
+  --red: #c52f45;
+  --gold: #d5b477;
+  --text: #f4eff7;
+  --muted: #b7acbf;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+header {
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #342537;
+}
+.brand { color: var(--gold); font-weight: bold; }
+nav { display: flex; gap: 18px; flex-wrap: wrap; }
+nav a { color: var(--muted); font-size: 14px; }
+nav a:hover, a:hover { color: var(--gold); }
+.hero {
+  min-height: 76vh;
+  padding: 90px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 80% 20%, #69203355, transparent 42%),
+    linear-gradient(135deg, #100d16, #211321 65%, #100d16);
+  border-bottom: 1px solid #49303d;
+}
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font: 12px Arial, sans-serif;
+}
+h1 {
+  max-width: 850px;
+  font-size: clamp(38px, 8vw, 76px);
+  line-height: 1.08;
+  margin: 22px 0;
+}
+h1 span { color: var(--red); }
+.hero p { max-width: 620px; color: var(--muted); }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px; }
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 1px solid var(--red);
+  background: var(--red);
+  color: white;
+  font: bold 13px Arial, sans-serif;
+  letter-spacing: 1px;
+}
+.btn.secondary { background: transparent; border-color: #68516a; }
+section { padding: 65px 8%; }
+.section-label {
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font: 12px Arial, sans-serif;
+}
+h2 { font-size: clamp(27px, 5vw, 40px); margin: 8px 0 18px; }
+.intro { color: var(--muted); max-width: 700px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid #35273b;
+  padding: 24px;
+}
+.card h3 { color: var(--gold); margin-top: 0; }
+.card p { color: var(--muted); }
+.tag {
+  color: #f08c9c;
+  font: 11px Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.quote {
+  border-left: 3px solid var(--red);
+  padding: 10px 0 10px 22px;
+  color: var(--gold);
+  font-size: 22px;
+  max-width: 720px;
+}
+.notice { font-size: 13px; color: var(--muted); }
+footer {
+  padding: 30px 8%;
+  border-top: 1px solid #342537;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+@media (max-width: 520px) {
+  header { align-items: flex-start; flex-direction: column; }
+  nav { gap: 14px; }
+  .hero { min-height: 65vh; padding: 65px 7%; }
+  section { padding: 48px 7%; }
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#">THE UNREGISTERED</a>
+  <nav aria-label="Main navigation">
+    <a href="#story">The Story</a>
+    <a href="#chapters">Chapters</a>
+    <a href="#characters">Characters</a>
+    <a href="#lore">World & Lore</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">Volume I · The Unregistered</div>
+    <h1>THE SYSTEM<br>FORGOT <span>MY EXISTENCE.</span></h1>
+    <p>
+      Everyone has a place in the system. Every soul has a record.
+      Every awakened has a future.
+      So what happens when the system cannot remember you?
+    </p>
+    <div class="actions">
+      <a class="btn" href="#chapters">ENTER THE STORY →</a>
+      <a class="btn secondary" href="#story">DISCOVER THE MYSTERY</a>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="section-label">The Premise</div>
+    <h2>A world that has no place for him.</h2>
+    <p class="intro">
+      In a world where awakening determines a person's future,
+      Kael Veyr faces a result no one understands. The system
+      searches for him, detects him, and then fails to recognize
+      his existence.
+    </p>
+    <p class="intro">
+      An impossible message. A forgotten identity. And a mystery
+      buried deeper than anyone dares to look.
+    </p>
+    <div class="quote">
+      “Warning: The System has no record of your existence.”
+    </div>
+  </section>
+
+  <section id="chapters">
+    <div class="section-label">Begin Reading</div>
+    <h2>The Chapters</h2>
+    <p class="intro">
+      Enter the story from the beginning. More chapters will be
+      added here as they are prepared for the website.
+    </p>
+    <div class="grid">
+      <article class="card">
+        <div class="tag">Chapter 01</div>
+        <h3>The Man Who Failed to Awaken</h3>
+        <p>The ceremony ends. The questions begin.</p>
+        <p class="notice">Full chapter coming soon.</p>
+      </article>
+      <article class="card">
+        <div class="tag">Chapter 02</div>
+        <h3>A New Chapter</h3>
+        <p>The story continues beyond the awakening ceremony.</p>
+        <p class="notice">Title and full chapter to be added.</p>
+      </article>
+      <article class="card">
+        <div class="tag">Chapter 03</div>
+        <h3>A Place for the Unwanted</h3>
+        <p>A warehouse job, a sealed container, and a record that should not exist.</p>
+        <p class="notice">Full chapter coming soon.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="characters">
+    <div class="section-label">The People Behind the Mystery</div>
+    <h2>Characters</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="tag">The Unregistered</div>
+        <h3>Kael Veyr</h3>
+        <p>
+          A young man rejected by the system that defines his world.
+          His true connection to it remains unknown.
+        </p>
+      </article>
+      <article class="card">
+        <div class="tag">The Unknown</div>
+        <h3>More to Be Revealed</h3>
+        <p>
+          Some identities are best discovered through the story.
+          Their histories will be revealed at the right time.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section id="lore">
+    <div class="section-label">Beyond the Surface</div>
+    <h2>World & Lore</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>The Awakening</h3>
+        <p>A defining event that shapes the paths people are expected to follow.</p>
+      </article>
+      <article class="card">
+        <h3>The System</h3>
+        <p>A force that records identities and governs the world's accepted rules.</p>
+      </article>
+      <article class="card">
+        <h3>The Unregistered</h3>
+        <p>What happens when a person exists beyond the records? The answer remains hidden.</p>
+      </article>
+    </div>
+    <p class="notice">
+      This section will expand as the world is revealed in the novel.
+      Spoilers will be handled carefully.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <p><strong>The System Forgot My Existence</strong></p>
+  <p>A dark fantasy story · Volume I: The Unregistered</p>
+  <p>All rights reserved by the author. Unauthorised reproduction is prohibited.</p>
+</footer>
+</body>
+  </html>
+      
