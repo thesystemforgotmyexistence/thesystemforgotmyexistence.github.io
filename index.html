@@ -1,704 +1,898 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#100d16">
-<title>The System Forgot My Existence</title>
-<meta name="description" content="Enter the world of The System Forgot My Existence by Aurther Lufus, a dark fantasy novel about Kael Veyr, the unregistered anomaly.">
-
-<style>
-:root {
-  --bg: #100d16;
-  --panel: #191421;
-  --red: #c52f45;
-  --gold: #d5b477;
-  --text: #f4eff7;
-  --muted: #b7acbf;
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 20px; }
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.7;
-}
-
-a { color: inherit; text-decoration: none; }
-
-header {
-  padding: 18px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  border-bottom: 1px solid #342537;
-  background: #100d16;
-}
-
-.brand { color: var(--gold); font-weight: bold; }
-nav { display: flex; gap: 18px; flex-wrap: wrap; }
-nav a { color: var(--muted); font-size: 14px; }
-nav a:hover, a:hover { color: var(--gold); }
-
-.hero {
-  min-height: 76vh;
-  padding: 90px 8%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background:
-    radial-gradient(ellipse at 80% 20%, #69203355, transparent 42%),
-    linear-gradient(135deg, #100d16, #211321 65%, #100d16);
-  border-bottom: 1px solid #49303d;
-}
-
-.eyebrow {
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font: 12px Arial, sans-serif;
-}
-
-h1 {
-  max-width: 850px;
-  font-size: clamp(38px, 8vw, 76px);
-  line-height: 1.08;
-  margin: 22px 0;
-}
-
-h1 span { color: var(--red); }
-.hero p { max-width: 620px; color: var(--muted); }
-
-.author-credit {
-  color: var(--gold);
-  font-style: italic;
-  margin-top: -5px;
-}
-
-.actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 25px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 20px;
-  border: 1px solid var(--red);
-  background: var(--red);
-  color: white;
-  font: bold 13px Arial, sans-serif;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: background .2s, box-shadow .2s;
-}
-
-.btn:hover {
-  color: white;
-  box-shadow: 0 0 18px #c52f4566;
-}
-
-.btn.secondary {
-  background: transparent;
-  border-color: #68516a;
-}
-
-section { padding: 65px 8%; }
-
-.section-label {
-  color: var(--red);
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font: 12px Arial, sans-serif;
-}
-
-h2 {
-  font-size: clamp(27px, 5vw, 40px);
-  margin: 8px 0 18px;
-}
-
-.intro { color: var(--muted); max-width: 700px; }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
-  gap: 18px;
-  margin-top: 28px;
-}
-
-.card {
-  background: var(--panel);
-  border: 1px solid #35273b;
-  padding: 24px;
-  min-width: 0;
-}
-
-.card h3 { color: var(--gold); margin-top: 0; }
-.card p { color: var(--muted); }
-
-.tag {
-  color: #f08c9c;
-  font: 11px Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.quote {
-  border-left: 3px solid var(--red);
-  padding: 10px 0 10px 22px;
-  color: var(--gold);
-  font-size: 22px;
-  max-width: 720px;
-}
-
-.notice { font-size: 13px; color: var(--muted); }
-
-.chapter-link {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 9px 14px;
-  border: 1px solid var(--red);
-  color: var(--text);
-  font: bold 12px Arial, sans-serif;
-  letter-spacing: 1px;
-  transition: background .2s ease, color .2s ease;
-}
-
-.chapter-link:hover {
-  background: var(--red);
-  color: white;
-}
-
-/* Book cover */
-.book-cover {
-  display: block;
-  width: 220px;
-  max-width: 80%;
-  height: auto;
-  margin: 0 auto 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* Kael Veyr portrait */
-.character-image {
-  display: block;
-  width: 100%;
-  max-width: 280px;
-  height: auto;
-  margin: 0 auto 22px;
-  border-radius: 10px;
-  border: 1px solid #49303d;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-}
-
-.character-card { text-align: center; }
-.character-card p { text-align: left; }
-
-/* THE ANOMALY INTERFACE */
-.anomaly-section {
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at center, #45142155, transparent 72%),
-    #100b12;
-  border-bottom: 1px solid #54202e;
-  border-top: 1px solid #54202e;
-}
-
-.system-panel {
-  max-width: 760px;
-  margin: 30px auto 0;
-  padding: 28px;
-  background: #100d16;
-  border: 1px solid #8c263a;
-  box-shadow: 0 0 25px #c52f451c, inset 0 0 25px #c52f4508;
-  position: relative;
-}
-
-.system-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #49202d;
-  font: 11px Arial, sans-serif;
-  letter-spacing: 2px;
-}
-
-.system-label { color: #ff687e; }
-
-.system-status {
-  color: #ff8b9b;
-  animation: statusPulse 2s infinite;
-}
-
-.system-heading {
-  font: bold clamp(19px, 4vw, 28px) Arial, sans-serif;
-  letter-spacing: 2px;
-  margin: 25px 0 15px;
-  color: #fff1f4;
-  text-shadow: 0 0 12px #ff193d66;
-}
-
-.glitch {
-  animation: glitch 4s infinite;
-}
-
-.system-line {
-  color: #c4b5c9;
-  font: 13px/1.9 monospace;
-  overflow-wrap: anywhere;
-}
-
-.system-error {
-  padding: 15px;
-  margin: 20px 0;
-  border-left: 3px solid #e13b53;
-  background: #2b111b;
-  color: #ff8293;
-  font: 13px/1.8 monospace;
-  animation: errorGlow 3s infinite;
-}
-
-.system-purple { color: #c4a2ff; }
-
-.system-actions {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 22px;
-}
-
-.system-btn {
-  background: transparent;
-  color: #ff8293;
-  border: 1px solid #b52b43;
-  padding: 12px 16px;
-  cursor: pointer;
-  font: bold 12px Arial, sans-serif;
-  letter-spacing: 1px;
-  transition: background .2s, box-shadow .2s;
-}
-
-.system-btn:hover,
-.system-btn:focus-visible {
-  background: #481421;
-  box-shadow: 0 0 18px #c52f4555;
-}
-
-.system-btn:disabled {
-  cursor: wait;
-  opacity: .7;
-}
-
-.system-footnote {
-  color: #786b80;
-  font: 10px/1.8 monospace;
-  margin-top: 20px;
-  overflow-wrap: anywhere;
-}
-
-/* Chapter 7 teaser */
-.coming-card {
-  border-color: #853044;
-  background:
-    radial-gradient(ellipse at top right, #76203533, transparent 65%),
-    #19111b;
-  position: relative;
-  overflow: hidden;
-}
-
-.coming-card h3 { color: #ff8a9a; }
-
-.coming-badge {
-  display: inline-block;
-  color: #ff9bab;
-  border: 1px solid #9c3045;
-  padding: 4px 9px;
-  font: bold 10px Arial, sans-serif;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-  animation: statusPulse 2.5s infinite;
-}
-
-.coming-card .chapter-link {
-  border-color: #654252;
-  color: #b7acbf;
-  cursor: default;
-}
-
-footer {
-  padding: 30px 8%;
-  border-top: 1px solid #342537;
-  color: var(--muted);
-  font-size: 13px;
-  text-align: center;
-}
-
-footer strong { color: var(--gold); }
-
-@keyframes statusPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .55; }
-}
-
-@keyframes errorGlow {
-  0%, 100% { box-shadow: 0 0 0 transparent; }
-  50% { box-shadow: 0 0 15px #c52f4520; }
-}
-
-@keyframes glitch {
-  0%, 92%, 100% { transform: translateX(0); text-shadow: 0 0 12px #ff193d66; }
-  93% { transform: translateX(-2px); text-shadow: 2px 0 #ff284d, -2px 0 #8b5cf6; }
-  95% { transform: translateX(2px); text-shadow: -2px 0 #ff284d, 2px 0 #8b5cf6; }
-  97% { transform: translateX(0); }
-}
-
-@media (max-width: 520px) {
-  header {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  nav { gap: 12px; }
-  nav a { font-size: 13px; }
-
-  .hero {
-    min-height: 65vh;
-    padding: 65px 7%;
-  }
-
-  section { padding: 48px 7%; }
-  .character-image { max-width: 260px; }
-  .system-panel { padding: 19px; }
-  .system-top { letter-spacing: 1px; }
-  .system-line, .system-error { font-size: 12px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-</style>
-</head>
-
-<body>
-<header>
-  <a class="brand" href="#">THE UNREGISTERED</a>
-  <nav aria-label="Main navigation">
-    <a href="#story">The Story</a>
-    <a href="#chapters">Chapters</a>
-    <a href="#system">System</a>
-    <a href="#characters">Characters</a>
-    <a href="#lore">World &amp; Lore</a>
-  </nav>
-</header>
-
-<main>
-  <section class="hero">
-    <div class="eyebrow">Volume I · The Unregistered</div>
-    <h1>THE SYSTEM<br>FORGOT <span>MY EXISTENCE.</span></h1>
-    <p>
-      Everyone has a place in the system. Every soul has a record.
-      Every awakened has a future.
-      So what happens when the system cannot remember you?
-    </p>
-    <div class="author-credit">A dark fantasy novel by Aurther Lufus</div>
-    <div class="actions">
-      <a class="btn" href="#chapters">ENTER THE STORY →</a>
-      <a class="btn secondary" href="#system">DISCOVER THE ANOMALY</a>
-    </div>
-  </section>
-
-  <!-- THE ANOMALY INTERFACE -->
-  <section id="system" class="anomaly-section">
-    <div class="section-label">Restricted System Access</div>
-    <h2>The Anomaly Interface</h2>
-    <p class="intro">
-      An unexpected presence has been detected. The system is attempting
-      to verify an identity that should not exist.
-    </p>
-
-    <div class="system-panel">
-      <div class="system-top">
-        <span class="system-label">[ SYSTEM INTERFACE ]</span>
-        <span class="system-status" id="systemStatus">ANOMALY DETECTED</span>
-      </div>
-
-      <div class="system-heading glitch">IDENTITY VERIFICATION</div>
-
-      <div class="system-line" id="systemLine1">
-        &gt; Searching for a valid host...
-      </div>
-      <div class="system-line" id="systemLine2">
-        &gt; Host detected.
-      </div>
-
-      <div class="system-error" id="systemMessage" aria-live="polite">
-        WARNING: IDENTITY VERIFICATION FAILED<br>
-        The System has no record of your existence.
-      </div>
-
-      <div class="system-line system-purple" id="systemLine3">
-        &gt; Secondary verification unavailable.
-      </div>
-
-      <div class="system-actions">
-        <button class="system-btn" id="scanButton" type="button">
-          INITIATE SCAN ↗
-        </button>
-        <span class="system-line" id="scanStatus" aria-live="polite">
-          Awaiting input_
-        </span>
-      </div>
-
-      <div class="system-footnote">
-        ACCESS LEVEL: UNKNOWN<br>
-        RECORD STATUS: UNREGISTERED<br>
-        ERROR CODE: 0x0000—UNKNOWN
-      </div>
-    </div>
-  </section>
-
-  <section id="story">
-    <div class="section-label">The Premise</div>
-    <h2>A world that has no place for him.</h2>
-
-    <img
-      src="Screenshot_20261027-231143_1.png"
-      alt="Cover of The System Forgot My Existence"
-      class="book-cover"
-    >
-
-    <p class="intro">
-      In a world where awakening determines a person's future,
-      Kael Veyr faces a result no one understands. The system
-      searches for him, detects him, and then fails to recognize
-      his existence.
-    </p>
-
-    <p class="intro">
-      An impossible message. A forgotten identity. And a mystery
-      buried deeper than anyone dares to look.
-    </p>
-
-    <div class="quote">
-      “Warning: The System has no record of your existence.”
-    </div>
-  </section>
-
-  <section id="chapters">
-    <div class="section-label">Begin Reading</div>
-    <h2>The Chapters</h2>
-
-    <p class="intro">
-      Six chapters are published on Webnovel. Begin with Chapter 1
-      and follow Kael Veyr's journey as the mystery of the
-      unregistered anomaly unfolds.
-    </p>
-
-    <div class="grid">
-      <article class="card">
-        <div class="tag">Chapter 01</div>
-        <h3>The Man Who Failed to Awaken</h3>
-        <p>The ceremony ends. The questions begin.</p>
-        <a class="chapter-link"
-          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805/the-man-who-failed-to-awaken_99892615255737078"
-          target="_blank" rel="noopener noreferrer">READ CHAPTER 1 →</a>
-      </article>
-
-      <article class="card">
-        <div class="tag">Chapter 02</div>
-        <h3>The Morning After</h3>
-        <p>The story continues beyond the awakening ceremony.</p>
-        <a class="chapter-link"
-          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805/the-morning-after_99916897390228628"
-          target="_blank" rel="noopener noreferrer">READ CHAPTER 2 →</a>
-      </article>
-
-      <article class="card">
-        <div class="tag">Chapter 03</div>
-        <h3>A Place for the Unwanted</h3>
-        <p>A warehouse job, a sealed container, and a record that should not exist.</p>
-        <a class="chapter-link"
-          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805/a-place-for-the-unwanted_99963738303555549"
-          target="_blank" rel="noopener noreferrer">READ CHAPTER 3 →</a>
-      </article>
-
-      <article class="card">
-        <div class="tag">Chapter 04</div>
-        <h3>The Record That Shouldn't Exist</h3>
-        <p>A record surfaces that challenges what the world believes about Kael.</p>
-        <a class="chapter-link"
-          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805/the-record-that-shouldn't-exist_99980498608120804"
-          target="_blank" rel="noopener noreferrer">READ CHAPTER 4 →</a>
-      </article>
-
-      <article class="card">
-        <div class="tag">Chapter 05</div>
-        <h3>The Price of Being Ordinary</h3>
-        <p>Being ordinary may come at a cost Kael cannot afford to ignore.</p>
-        <a class="chapter-link"
-          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805/the-price-of-being-ordinary_100009876855505822"
-          target="_blank" rel="noopener noreferrer">READ CHAPTER 5 →</a>
-      </article>
-
-      <article class="card">
-        <div class="tag">Chapter 06</div>
-        <h3>A Test of Fire</h3>
-        <p>Kael faces a test that may reveal more than he is ready to learn.</p>
-        <a class="chapter-link"
-          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805/a-test-of-fire_100092096085555227?pageIndex=1"
-          target="_blank" rel="noopener noreferrer">READ CHAPTER 6 →</a>
-      </article>
-
-      <!-- CHAPTER 7 TEASER -->
-      <article class="card coming-card">
-        <div class="coming-badge">NEXT CHAPTER · IN DEVELOPMENT</div>
-        <div class="tag">Chapter 07</div>
-        <h3>Coming Soon...</h3>
-        <p>
-          The records remain incomplete. But something has begun
-          to notice the anomaly.
-        </p>
-        <span class="chapter-link">AWAITING RELEASE</span>
-      </article>
-    </div>
-
-    <p class="notice">
-      Chapter 7 will be linked here when it is published on Webnovel.
-    </p>
-  </section>
-
-  <section id="characters">
-    <div class="section-label">The People Behind the Mystery</div>
-    <h2>Characters</h2>
-
-    <div class="grid">
-      <article class="card character-card">
-        <img
-          src="kael-veyr.png"
-          alt="Kael Veyr, The Unregistered"
-          class="character-image"
-          loading="lazy"
-        >
-        <div class="tag">The Unregistered</div>
-        <h3>Kael Veyr</h3>
-        <p>
-          A young man rejected by the system that defines his world.
-          His true connection to it remains unknown.
-        </p>
-        <p class="notice">
-          Not a hero. Not a villain. Just someone the system forgot.
-        </p>
-      </article>
-
-      <article class="card">
-        <div class="tag">The Unknown</div>
-        <h3>More to Be Revealed</h3>
-        <p>
-          Some identities are best discovered through the story.
-          Their histories will be revealed at the right time.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <section id="lore">
-    <div class="section-label">Beyond the Surface</div>
-    <h2>World &amp; Lore</h2>
-
-    <div class="grid">
-      <article class="card">
-        <h3>The Awakening</h3>
-        <p>A defining event that shapes the paths people are expected to follow.</p>
-      </article>
-
-      <article class="card">
-        <h3>The System</h3>
-        <p>A force that records identities and governs the world's accepted rules.</p>
-      </article>
-
-      <article class="card">
-        <h3>The Unregistered</h3>
-        <p>What happens when a person exists beyond the records? The answer remains hidden.</p>
-      </article>
-    </div>
-
-    <p class="notice">
-      This section will expand as the world is revealed in the novel.
-      Spoilers will be handled carefully.
-    </p>
-  </section>
-</main>
-
-<footer>
-  <p><strong>The System Forgot My Existence</strong></p>
-  <p>Volume I: The Unregistered</p>
-  <p>A dark fantasy novel by <strong>Aurther Lufus</strong></p>
-  <p>All rights reserved by the author. Unauthorised reproduction is prohibited.</p>
-</footer>
-
-<script>
-(function () {
-  const button = document.getElementById("scanButton");
-  const status = document.getElementById("systemStatus");
-  const line1 = document.getElementById("systemLine1");
-  const line2 = document.getElementById("systemLine2");
-  const message = document.getElementById("systemMessage");
-  const line3 = document.getElementById("systemLine3");
-  const scanStatus = document.getElementById("scanStatus");
-
-  let scanning = false;
-
-  button.addEventListener("click", function () {
-    if (scanning) return;
-
-    scanning = true;
-    button.disabled = true;
-    button.textContent = "SCANNING...";
-    status.textContent = "VERIFICATION IN PROGRESS";
-    scanStatus.textContent = "Scanning records...";
-    line1.textContent = "> Initiating secondary scan...";
-    line2.textContent = "> Searching registered identities...";
-
-    message.textContent = "PROCESSING REQUEST...";
-    line3.textContent = "> Accessing archived records...";
-
-    window.setTimeout(function () {
-      message.innerHTML =
-        "WARNING: IDENTITY VERIFICATION FAILED<br>" +
-        "The System has no record of your existence.";
-
-      line1.textContent = "> Scan complete.";
-      line2.textContent = "> No matching identity found.";
-      line3.textContent = "> Further access denied.";
-      status.textContent = "ANOMALY CONFIRMED";
-      scanStatus.textContent = "Result: UNKNOWN";
-
-      button.textContent = "SCAN AGAIN ↗";
-      button.disabled = false;
-      scanning = false;
-    }, 1300);
-  });
-})();
-</script>
-</body>
-  </html>
-                                                         
+‎<!DOCTYPE html>
+‎<html lang="en">
+‎<head>
+‎<meta charset="UTF-8">
+‎<meta name="viewport" content="width=device-width, initial-scale=1.0">
+‎<meta name="theme-color" content="#100d16">
+‎<title>The System Forgot My Existence</title>
+‎<meta name="description" content="Enter the world of The System Forgot My Existence by Aurther Lufus, a dark fantasy novel about Kael Veyr, the unregistered anomaly.">
+‎
+‎<style>
+‎:root {
+‎  --bg: #100d16;
+‎  --panel: #191421;
+‎  --red: #c52f45;
+‎  --gold: #d5b477;
+‎  --text: #f4eff7;
+‎  --muted: #b7acbf;
+‎}
+‎
+‎* { box-sizing: border-box; }
+‎html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+‎
+‎body {
+‎  margin: 0;
+‎  background: var(--bg);
+‎  color: var(--text);
+‎  font-family: Georgia, "Times New Roman", serif;
+‎  line-height: 1.7;
+‎}
+‎
+‎a { color: inherit; text-decoration: none; }
+‎
+‎header {
+‎  padding: 18px 7%;
+‎  display: flex;
+‎  justify-content: space-between;
+‎  align-items: center;
+‎  gap: 16px;
+‎  border-bottom: 1px solid #342537;
+‎  background: #100d16;
+‎}
+‎
+‎.brand { color: var(--gold); font-weight: bold; }
+‎
+‎nav {
+‎  display: flex;
+‎  gap: 18px;
+‎  flex-wrap: wrap;
+‎}
+‎
+‎nav a { color: var(--muted); font-size: 14px; }
+‎nav a:hover, a:hover { color: var(--gold); }
+‎
+‎.hero {
+‎  min-height: 76vh;
+‎  padding: 90px 8%;
+‎  display: flex;
+‎  flex-direction: column;
+‎  justify-content: center;
+‎  background:
+‎    radial-gradient(ellipse at 80% 20%, #69203355, transparent 42%),
+‎    linear-gradient(135deg, #100d16, #211321 65%, #100d16);
+‎  border-bottom: 1px solid #49303d;
+‎}
+‎
+‎.eyebrow {
+‎  color: var(--gold);
+‎  text-transform: uppercase;
+‎  letter-spacing: 4px;
+‎  font: 12px Arial, sans-serif;
+‎}
+‎
+‎h1 {
+‎  max-width: 850px;
+‎  font-size: clamp(38px, 8vw, 76px);
+‎  line-height: 1.08;
+‎  margin: 22px 0;
+‎}
+‎
+‎h1 span { color: var(--red); }
+‎.hero p { max-width: 620px; color: var(--muted); }
+‎
+‎.author-credit {
+‎  color: var(--gold);
+‎  font-style: italic;
+‎  margin-top: -5px;
+‎}
+‎
+‎.actions {
+‎  display: flex;
+‎  gap: 12px;
+‎  flex-wrap: wrap;
+‎  margin-top: 25px;
+‎}
+‎
+‎.btn {
+‎  display: inline-block;
+‎  padding: 12px 20px;
+‎  border: 1px solid var(--red);
+‎  background: var(--red);
+‎  color: white;
+‎  font: bold 13px Arial, sans-serif;
+‎  letter-spacing: 1px;
+‎  cursor: pointer;
+‎  transition: background .2s, box-shadow .2s;
+‎}
+‎
+‎.btn:hover {
+‎  color: white;
+‎  box-shadow: 0 0 18px #c52f4566;
+‎}
+‎
+‎.btn.secondary {
+‎  background: transparent;
+‎  border-color: #68516a;
+‎}
+‎
+‎section { padding: 65px 8%; }
+‎
+‎.section-label {
+‎  color: var(--red);
+‎  text-transform: uppercase;
+‎  letter-spacing: 3px;
+‎  font: 12px Arial, sans-serif;
+‎}
+‎
+‎h2 {
+‎  font-size: clamp(27px, 5vw, 40px);
+‎  margin: 8px 0 18px;
+‎}
+‎
+‎.intro { color: var(--muted); max-width: 700px; }
+‎
+‎.grid {
+‎  display: grid;
+‎  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+‎  gap: 18px;
+‎  margin-top: 28px;
+‎}
+‎
+‎.card {
+‎  background: var(--panel);
+‎  border: 1px solid #35273b;
+‎  padding: 24px;
+‎  min-width: 0;
+‎}
+‎
+‎.card h3 { color: var(--gold); margin-top: 0; }
+‎.card p { color: var(--muted); }
+‎
+‎.tag {
+‎  color: #f08c9c;
+‎  font: 11px Arial, sans-serif;
+‎  text-transform: uppercase;
+‎  letter-spacing: 2px;
+‎}
+‎
+‎.quote {
+‎  border-left: 3px solid var(--red);
+‎  padding: 10px 0 10px 22px;
+‎  color: var(--gold);
+‎  font-size: 22px;
+‎  max-width: 720px;
+‎}
+‎
+‎.notice { font-size: 13px; color: var(--muted); }
+‎
+‎.chapter-link {
+‎  display: inline-block;
+‎  margin-top: 10px;
+‎  padding: 9px 14px;
+‎  border: 1px solid var(--red);
+‎  color: var(--text);
+‎  font: bold 12px Arial, sans-serif;
+‎  letter-spacing: 1px;
+‎  transition: background .2s ease, color .2s ease;
+‎}
+‎
+‎.chapter-link:hover {
+‎  background: var(--red);
+‎  color: white;
+‎}
+‎
+‎.book-cover {
+‎  display: block;
+‎  width: 220px;
+‎  max-width: 80%;
+‎  height: auto;
+‎  margin: 0 auto 30px;
+‎  border-radius: 12px;
+‎  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+‎}
+‎
+‎.character-image {
+‎  display: block;
+‎  width: 100%;
+‎  max-width: 280px;
+‎  height: auto;
+‎  margin: 0 auto 22px;
+‎  border-radius: 10px;
+‎  border: 1px solid #49303d;
+‎  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+‎}
+‎
+‎.character-card { text-align: center; }
+‎.character-card p { text-align: left; }
+‎
+‎/* ANOMALY INTERFACE */
+‎.anomaly-section {
+‎  position: relative;
+‎  overflow: hidden;
+‎  background:
+‎    radial-gradient(ellipse at center, #45142155, transparent 72%),
+‎    #100b12;
+‎  border-bottom: 1px solid #54202e;
+‎  border-top: 1px solid #54202e;
+‎}
+‎
+‎.system-panel {
+‎  max-width: 760px;
+‎  margin: 30px auto 0;
+‎  padding: 28px;
+‎  background: #100d16;
+‎  border: 1px solid #8c263a;
+‎  box-shadow: 0 0 25px #c52f451c, inset 0 0 25px #c52f4508;
+‎  position: relative;
+‎}
+‎
+‎.system-top {
+‎  display: flex;
+‎  align-items: center;
+‎  justify-content: space-between;
+‎  flex-wrap: wrap;
+‎  gap: 10px;
+‎  padding-bottom: 15px;
+‎  border-bottom: 1px solid #49202d;
+‎  font: 11px Arial, sans-serif;
+‎  letter-spacing: 2px;
+‎}
+‎
+‎.system-label { color: #ff687e; }
+‎
+‎.system-status {
+‎  color: #ff8b9b;
+‎  animation: statusPulse 2s infinite;
+‎}
+‎
+‎.system-heading {
+‎  font: bold clamp(19px, 4vw, 28px) Arial, sans-serif;
+‎  letter-spacing: 2px;
+‎  margin: 25px 0 15px;
+‎  color: #fff1f4;
+‎  text-shadow: 0 0 12px #ff193d66;
+‎}
+‎
+‎.glitch { animation: glitch 4s infinite; }
+‎
+‎.system-line {
+‎  color: #c4b5c9;
+‎  font: 13px/1.9 monospace;
+‎  overflow-wrap: anywhere;
+‎}
+‎
+‎.system-error {
+‎  padding: 15px;
+‎  margin: 20px 0;
+‎  border-left: 3px solid #e13b53;
+‎  background: #2b111b;
+‎  color: #ff8293;
+‎  font: 13px/1.8 monospace;
+‎  animation: errorGlow 3s infinite;
+‎}
+‎
+‎.system-purple { color: #c4a2ff; }
+‎
+‎.system-actions {
+‎  display: flex;
+‎  gap: 12px;
+‎  align-items: center;
+‎  flex-wrap: wrap;
+‎  margin-top: 22px;
+‎}
+‎
+‎.system-btn {
+‎  background: transparent;
+‎  color: #ff8293;
+‎  border: 1px solid #b52b43;
+‎  padding: 12px 16px;
+‎  cursor: pointer;
+‎  font: bold 12px Arial, sans-serif;
+‎  letter-spacing: 1px;
+‎  transition: background .2s, box-shadow .2s;
+‎}
+‎
+‎.system-btn:hover,
+‎.system-btn:focus-visible {
+‎  background: #481421;
+‎  box-shadow: 0 0 18px #c52f4555;
+‎}
+‎
+‎.system-btn:disabled {
+‎  cursor: wait;
+‎  opacity: .7;
+‎}
+‎
+‎.system-footnote {
+‎  color: #786b80;
+‎  font: 10px/1.8 monospace;
+‎  margin-top: 20px;
+‎  overflow-wrap: anywhere;
+‎}
+‎
+‎/* CHAPTER 7 */
+‎.coming-card {
+‎  border-color: #853044;
+‎  background:
+‎    radial-gradient(ellipse at top right, #76203533, transparent 65%),
+‎    #19111b;
+‎  position: relative;
+‎  overflow: hidden;
+‎}
+‎
+‎.coming-card h3 { color: #ff8a9a; }
+‎
+‎.coming-badge {
+‎  display: inline-block;
+‎  color: #ff9bab;
+‎  border: 1px solid #9c3045;
+‎  padding: 4px 9px;
+‎  font: bold 10px Arial, sans-serif;
+‎  letter-spacing: 2px;
+‎  margin-bottom: 15px;
+‎  animation: statusPulse 2.5s infinite;
+‎}
+‎
+‎/* RECRUIT A READER */
+‎.invite-section {
+‎  position: relative;
+‎  overflow: hidden;
+‎  background:
+‎    radial-gradient(ellipse at 75% 25%, #45142155, transparent 65%),
+‎    #100b12;
+‎  border-top: 1px solid #54202e;
+‎  border-bottom: 1px solid #54202e;
+‎}
+‎
+‎.invite-panel {
+‎  max-width: 760px;
+‎  margin: 30px auto 0;
+‎  padding: 28px;
+‎  background: #100d16;
+‎  border: 1px solid #8c263a;
+‎  box-shadow: 0 0 25px #c52f451c,
+‎              inset 0 0 25px #c52f4508;
+‎  position: relative;
+‎}
+‎
+‎.invite-heading {
+‎  font: bold clamp(19px, 4vw, 28px) Arial, sans-serif;
+‎  letter-spacing: 2px;
+‎  color: #fff1f4;
+‎  text-shadow: 0 0 12px #ff193d66;
+‎  margin: 25px 0 15px;
+‎}
+‎
+‎.invite-description {
+‎  color: #c4b5c9;
+‎  font: 13px/1.9 monospace;
+‎}
+‎
+‎.invite-message {
+‎  margin: 22px 0;
+‎  padding: 16px;
+‎  background: #2b111b;
+‎  border-left: 3px solid #e13b53;
+‎  color: #ff9bab;
+‎  font: 13px/1.9 monospace;
+‎  overflow-wrap: anywhere;
+‎  white-space: pre-line;
+‎}
+‎
+‎.invite-status {
+‎  min-height: 24px;
+‎  margin-top: 16px;
+‎  color: #c4a2ff;
+‎  font: 12px/1.8 monospace;
+‎  overflow-wrap: anywhere;
+‎}
+‎
+‎.invite-panel .system-btn { min-height: 44px; }
+‎
+‎footer {
+‎  padding: 30px 8%;
+‎  border-top: 1px solid #342537;
+‎  color: var(--muted);
+‎  font-size: 13px;
+‎  text-align: center;
+‎}
+‎
+‎footer strong { color: var(--gold); }
+‎
+‎@keyframes statusPulse {
+‎  0%, 100% { opacity: 1; }
+‎  50% { opacity: .55; }
+‎}
+‎
+‎@keyframes errorGlow {
+‎  0%, 100% { box-shadow: 0 0 0 transparent; }
+‎  50% { box-shadow: 0 0 15px #c52f4520; }
+‎}
+‎
+‎@keyframes glitch {
+‎  0%, 92%, 100% {
+‎    transform: translateX(0);
+‎    text-shadow: 0 0 12px #ff193d66;
+‎  }
+‎  93% {
+‎    transform: translateX(-2px);
+‎    text-shadow: 2px 0 #ff284d, -2px 0 #8b5cf6;
+‎  }
+‎  95% {
+‎    transform: translateX(2px);
+‎    text-shadow: -2px 0 #ff284d, 2px 0 #8b5cf6;
+‎  }
+‎  97% { transform: translateX(0); }
+‎}
+‎
+‎@media (max-width: 520px) {
+‎  header {
+‎    align-items: flex-start;
+‎    flex-direction: column;
+‎  }
+‎
+‎  nav { gap: 12px; }
+‎  nav a { font-size: 13px; }
+‎
+‎  .hero {
+‎    min-height: 65vh;
+‎    padding: 65px 7%;
+‎  }
+‎
+‎  section { padding: 48px 7%; }
+‎  .character-image { max-width: 260px; }
+‎  .system-panel, .invite-panel { padding: 19px; }
+‎  .system-top { letter-spacing: 1px; }
+‎  .system-line, .system-error { font-size: 12px; }
+‎}
+‎
+‎@media (prefers-reduced-motion: reduce) {
+‎  html { scroll-behavior: auto; }
+‎  *, *::before, *::after {
+‎    animation-duration: 0.01ms !important;
+‎    animation-iteration-count: 1 !important;
+‎    scroll-behavior: auto !important;
+‎    transition-duration: 0.01ms !important;
+‎  }
+‎}
+‎</style>
+‎</head>
+‎
+‎<body>
+‎<header>
+‎  <a class="brand" href="#">THE UNREGISTERED</a>
+‎  <nav aria-label="Main navigation">
+‎    <a href="#story">The Story</a>
+‎    <a href="#chapters">Chapters</a>
+‎    <a href="#system">System</a>
+‎    <a href="#characters">Characters</a>
+‎    <a href="#lore">World &amp; Lore</a>
+‎    <a href="#invite">Recruit a Reader</a>
+‎  </nav>
+‎</header>
+‎
+‎<main>
+‎  <section class="hero">
+‎    <div class="eyebrow">Volume I · The Unregistered</div>
+‎    <h1>THE SYSTEM<br>FORGOT <span>MY EXISTENCE.</span></h1>
+‎
+‎    <p>
+‎      Everyone has a place in the system. Every soul has a record.
+‎      Every awakened has a future.
+‎      So what happens when the system cannot remember you?
+‎    </p>
+‎
+‎    <div class="author-credit">A dark fantasy novel by Aurther Lufus</div>
+‎
+‎    <div class="actions">
+‎      <a class="btn" href="#chapters">ENTER THE STORY →</a>
+‎      <a class="btn secondary" href="#system">DISCOVER THE ANOMALY</a>
+‎    </div>
+‎  </section>
+‎
+‎  <!-- THE ANOMALY INTERFACE -->
+‎  <section id="system" class="anomaly-section">
+‎    <div class="section-label">Restricted System Access</div>
+‎    <h2>The Anomaly Interface</h2>
+‎
+‎    <p class="intro">
+‎      An unexpected presence has been detected. The system is attempting
+‎      to verify an identity that should not exist.
+‎    </p>
+‎
+‎    <div class="system-panel">
+‎      <div class="system-top">
+‎        <span class="system-label">[ SYSTEM INTERFACE ]</span>
+‎        <span class="system-status" id="systemStatus">ANOMALY DETECTED</span>
+‎      </div>
+‎
+‎      <div class="system-heading glitch">IDENTITY VERIFICATION</div>
+‎
+‎      <div class="system-line" id="systemLine1">
+‎        &gt; Searching for a valid host...
+‎      </div>
+‎
+‎      <div class="system-line" id="systemLine2">
+‎        &gt; Host detected.
+‎      </div>
+‎
+‎      <div class="system-error" id="systemMessage" aria-live="polite">
+‎        WARNING: IDENTITY VERIFICATION FAILED<br>
+‎        The System has no record of your existence.
+‎      </div>
+‎
+‎      <div class="system-line system-purple" id="systemLine3">
+‎        &gt; Secondary verification unavailable.
+‎      </div>
+‎
+‎      <div class="system-actions">
+‎        <button class="system-btn" id="scanButton" type="button">
+‎          INITIATE SCAN ↗
+‎        </button>
+‎        <span class="system-line" id="scanStatus" aria-live="polite">
+‎          Awaiting input_
+‎        </span>
+‎      </div>
+‎
+‎      <div class="system-footnote">
+‎        ACCESS LEVEL: UNKNOWN<br>
+‎        RECORD STATUS: UNREGISTERED<br>
+‎        ERROR CODE: 0x0000—UNKNOWN
+‎      </div>
+‎    </div>
+‎  </section>
+‎
+‎  <!-- THE STORY -->
+‎  <section id="story">
+‎    <div class="section-label">The Premise</div>
+‎    <h2>A world that has no place for him.</h2>
+‎
+‎    <img
+‎      src="Screenshot_20261027-231143_1.png"
+‎      alt="Cover of The System Forgot My Existence"
+‎      class="book-cover"
+‎    >
+‎
+‎    <p class="intro">
+‎      In a world where awakening determines a person's future,
+‎      Kael Veyr faces a result no one understands. The system
+‎      searches for him, detects him, and then fails to recognize
+‎      his existence.
+‎    </p>
+‎
+‎    <p class="intro">
+‎      An impossible message. A forgotten identity. And a mystery
+‎      buried deeper than anyone dares to look.
+‎    </p>
+‎
+‎    <div class="quote">
+‎      “Warning: The System has no record of your existence.”
+‎    </div>
+‎  </section>
+‎
+‎  <!-- CHAPTERS -->
+‎  <section id="chapters">
+‎    <div class="section-label">Begin Reading</div>
+‎    <h2>The Chapters</h2>
+‎
+‎    <p class="intro">
+‎      Seven chapters are published on Webnovel. Begin with Chapter 1
+‎      and follow Kael Veyr's journey as the mystery of the
+‎      unregistered anomaly unfolds.
+‎    </p>
+‎
+‎    <div class="grid">
+‎      <article class="card">
+‎        <div class="tag">Chapter 01</div>
+‎        <h3>The Man Who Failed to Awaken</h3>
+‎        <p>The ceremony ends. The questions begin.</p>
+‎        <a class="chapter-link"
+‎          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805/the-man-who-failed-to-awaken_99892615255737078"
+‎          target="_blank" rel="noopener noreferrer">READ CHAPTER 1 →</a>
+‎      </article>
+‎
+‎      <article class="card">
+‎        <div class="tag">Chapter 02</div>
+‎        <h3>The Morning After</h3>
+‎        <p>The story continues beyond the awakening ceremony.</p>
+‎        <a class="chapter-link"
+‎          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805/the-morning-after_99916897390228628"
+‎          target="_blank" rel="noopener noreferrer">READ CHAPTER 2 →</a>
+‎      </article>
+‎
+‎      <article class="card">
+‎        <div class="tag">Chapter 03</div>
+‎        <h3>A Place for the Unwanted</h3>
+‎        <p>A warehouse job, a sealed container, and a record that should not exist.</p>
+‎        <a class="chapter-link"
+‎          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805/a-place-for-the-unwanted_99963738303555549"
+‎          target="_blank" rel="noopener noreferrer">READ CHAPTER 3 →</a>
+‎      </article>
+‎
+‎      <article class="card">
+‎        <div class="tag">Chapter 04</div>
+‎        <h3>The Record That Shouldn't Exist</h3>
+‎        <p>A record surfaces that challenges what the world believes about Kael.</p>
+‎        <a class="chapter-link"
+‎          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805/the-record-that-shouldn%27t-exist_99980498608120804"
+‎          target="_blank" rel="noopener noreferrer">READ CHAPTER 4 →</a>
+‎      </article>
+‎
+‎      <article class="card">
+‎        <div class="tag">Chapter 05</div>
+‎        <h3>The Price of Being Ordinary</h3>
+‎        <p>Being ordinary may come at a cost Kael cannot afford to ignore.</p>
+‎        <a class="chapter-link"
+‎          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805/the-price-of-being-ordinary_100009876855505822"
+‎          target="_blank" rel="noopener noreferrer">READ CHAPTER 5 →</a>
+‎      </article>
+‎
+‎      <article class="card">
+‎        <div class="tag">Chapter 06</div>
+‎        <h3>A Test of Fire</h3>
+‎        <p>Kael faces a test that may reveal more than he is ready to learn.</p>
+‎        <a class="chapter-link"
+‎          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805/a-test-of-fire_100092096085555227?pageIndex=1"
+‎          target="_blank" rel="noopener noreferrer">READ CHAPTER 6 →</a>
+‎      </article>
+‎
+‎      <article class="card coming-card">
+‎        <div class="coming-badge">NEW CHAPTER · PUBLISHED</div>
+‎        <div class="tag">Chapter 07</div>
+‎        <h3>The Inspection</h3>
+‎        <p>
+‎          The records remain incomplete. But something has begun
+‎          to notice the anomaly.
+‎        </p>
+‎        <a class="chapter-link"
+‎          href="https://m.webnovel.com/book/the-system-forgot-my-existence_37209659908721805"
+‎          target="_blank" rel="noopener noreferrer">FIND CHAPTER 7 ON WEBNOVEL →</a>
+‎      </article>
+‎    </div>
+‎
+‎    <p class="notice">
+‎      Chapter 7: The Inspection — now published on Webnovel.
+‎    </p>
+‎  </section>
+‎
+‎  <!-- CHARACTERS -->
+‎  <section id="characters">
+‎    <div class="section-label">The People Behind the Mystery</div>
+‎    <h2>Characters</h2>
+‎
+‎    <div class="grid">
+‎      <article class="card character-card">
+‎        <img
+‎          src="kael-veyr.png"
+‎          alt="Kael Veyr, The Unregistered"
+‎          class="character-image"
+‎          loading="lazy"
+‎        >
+‎
+‎        <div class="tag">The Unregistered</div>
+‎        <h3>Kael Veyr</h3>
+‎
+‎        <p>
+‎          A young man rejected by the system that defines his world.
+‎          His true connection to it remains unknown.
+‎        </p>
+‎
+‎        <p class="notice">
+‎          Not a hero. Not a villain. Just someone the system forgot.
+‎        </p>
+‎      </article>
+‎
+‎      <article class="card">
+‎        <div class="tag">The Unknown</div>
+‎        <h3>More to Be Revealed</h3>
+‎        <p>
+‎          Some identities are best discovered through the story.
+‎          Their histories will be revealed at the right time.
+‎        </p>
+‎      </article>
+‎    </div>
+‎  </section>
+‎
+‎  <!-- WORLD & LORE -->
+‎  <section id="lore">
+‎    <div class="section-label">Beyond the Surface</div>
+‎    <h2>World &amp; Lore</h2>
+‎
+‎    <div class="grid">
+‎      <article class="card">
+‎        <h3>The Awakening</h3>
+‎        <p>A defining event that shapes the paths people are expected to follow.</p>
+‎      </article>
+‎
+‎      <article class="card">
+‎        <h3>The System</h3>
+‎        <p>A force that records identities and governs the world's accepted rules.</p>
+‎      </article>
+‎
+‎      <article class="card">
+‎        <h3>The Unregistered</h3>
+‎        <p>What happens when a person exists beyond the records? The answer remains hidden.</p>
+‎      </article>
+‎    </div>
+‎
+‎    <p class="notice">
+‎      This section will expand as the world is revealed in the novel.
+‎      Spoilers will be handled carefully.
+‎    </p>
+‎  </section>
+‎
+‎  <!-- RECRUIT A READER -->
+‎  <section id="invite" class="invite-section">
+‎    <div class="section-label">External Access Protocol</div>
+‎    <h2>Recruit a Reader</h2>
+‎
+‎    <p class="intro">
+‎      The System failed to recognize one existence.
+‎      Help another reader discover why.
+‎    </p>
+‎
+‎    <div class="invite-panel">
+‎      <div class="system-top">
+‎        <span class="system-label">[ RECRUITMENT PROTOCOL ]</span>
+‎        <span class="system-status">AWAITING INPUT</span>
+‎      </div>
+‎
+‎      <div class="invite-heading glitch">
+‎        EXPAND THE ANOMALY
+‎      </div>
+‎
+‎      <div class="invite-description">
+‎        &gt; Potential reader detected...<br>
+‎        &gt; Preparing invitation...<br>
+‎        &gt; Destination: The Unregistered
+‎      </div>
+‎
+‎      <div class="invite-message" id="inviteMessage">Know someone who loves dark fantasy, mysterious systems, and characters who defy their world's rules?
+‎
+‎Discover The System Forgot My Existence by Aurther Lufus. Follow Kael Veyr, the unregistered anomaly, as he uncovers a mystery the System cannot explain.
+‎
+‎Enter the story:
+‎https://thesystemforgotmyexistence.github.io/</div>
+‎
+‎      <div class="system-actions">
+‎        <button class="system-btn" id="shareInvite" type="button">
+‎          SHARE INVITATION ↗
+‎        </button>
+‎
+‎        <button class="system-btn" id="copyInvite" type="button">
+‎          COPY INVITATION LINK
+‎        </button>
+‎      </div>
+‎
+‎      <div class="invite-status" id="inviteStatus" aria-live="polite">
+‎        STATUS: AWAITING USER ACTION_
+‎      </div>
+‎
+‎      <div class="system-footnote">
+‎        ACCESS LEVEL: PUBLIC INVITATION<br>
+‎        RECRUITMENT MODE: VOLUNTARY<br>
+‎        SYSTEM WARNING: DESTINATION MAY CONTAIN MYSTERIES
+‎      </div>
+‎    </div>
+‎  </section>
+‎</main>
+‎
+‎<footer>
+‎  <p><strong>The System Forgot My Existence</strong></p>
+‎  <p>Volume I: The Unregistered</p>
+‎  <p>A dark fantasy novel by <strong>Aurther Lufus</strong></p>
+‎  <p>All rights reserved by the author. Unauthorised reproduction is prohibited.</p>
+‎</footer>
+‎
+‎<script>
+‎(function () {
+‎  /* ANOMALY SCAN */
+‎  const button = document.getElementById("scanButton");
+‎  const status = document.getElementById("systemStatus");
+‎  const line1 = document.getElementById("systemLine1");
+‎  const line2 = document.getElementById("systemLine2");
+‎  const message = document.getElementById("systemMessage");
+‎  const line3 = document.getElementById("systemLine3");
+‎  const scanStatus = document.getElementById("scanStatus");
+‎
+‎  let scanning = false;
+‎
+‎
+‎button.addEventListener("click", function () {
+‎    if (scanning) return;
+‎
+‎    scanning = true;
+‎    button.disabled = true;
+‎    button.textContent = "SCANNING...";
+‎    status.textContent = "VERIFICATION IN PROGRESS";
+‎    scanStatus.textContent = "Scanning records...";
+‎    line1.textContent = "> Initiating secondary scan...";
+‎    line2.textContent = "> Searching registered identities...";
+‎    message.textContent = "PROCESSING REQUEST...";
+‎    line3.textContent = "> Accessing archived records...";
+‎
+‎    window.setTimeout(function () {
+‎message.innerHTML =
+‎        "WARNING: IDENTITY VERIFICATION FAILED<br>" +
+‎        "The System has no record of your existence.";
+‎
+‎      line1.textContent = "> Scan complete.";
+‎      line2.textContent = "> No matching identity found.";
+‎      line3.textContent = "> Further access denied.";
+‎      status.textContent = "ANOMALY CONFIRMED";
+‎      scanStatus.textContent = "Result: UNKNOWN";
+‎      button.textContent = "SCAN AGAIN ↗";
+‎      button.disabled = false;
+‎      scanning = false;
+‎    }, 1300);
+‎  });
+      ‎/* RECRUIT A READER */
+‎  const shareButton = document.getElementById("shareInvite");
+‎  const copyButton = document.getElementById("copyInvite");
+‎  const inviteStatus = document.getElementById("inviteStatus");
+‎
+‎  const inviteUrl = "https://thesystemforgotmyexistence.github.io/";
+‎  const inviteTitle = "The System Forgot My Existence";
+‎
+‎  const inviteText =
+‎    "Know someone who loves dark fantasy and mysterious systems? " +
+‎    "Discover The System Forgot My Existence by Aurther Lufus. " +
+‎    "Follow Kael Veyr, the unregistered anomaly. Read here: " +
+‎    inviteUrl;
+‎
+‎  async function copyInvitation() {
+‎    try {
+‎      if (navigator.clipboard && window.isSecureContext) {
+‎        await navigator.clipboard.writeText(inviteUrl);
+‎      } else {
+‎        const field = document.createElement("textarea");
+‎        field.value = inviteUrl;
+‎        field.style.position = "fixed";
+‎        field.style.opacity = "0";
+‎       document.body.appendChild(field);
+‎        field.focus();
+‎        field.select();
+‎
+‎        const copied = document.execCommand("copy");
+‎        field.remove();
+‎
+‎        if (!copied) throw new Error("Copy unavailable");
+‎      }
+‎
+‎      inviteStatus.textContent =
+‎        "SUCCESS: INVITATION LINK COPIED_";
+‎
+‎    } catch (error) {
+‎      inviteStatus.textContent =
+‎        "COPY BLOCKED. COPY THE WEBSITE URL MANUALLY.";
+‎    }
+‎  }
+‎
+‎  copyButton.addEventListener("click", copyInvitation);
+‎
+‎shareButton.addEventListener("click", async function () {
+‎    if (navigator.share) {
+‎      try {
+‎        await navigator.share({
+‎          title: inviteTitle,
+‎          text: inviteText,
+‎          url: inviteUrl
+‎        });
+‎
+‎        inviteStatus.textContent = "SHARE MENU ACTIVATED_";
+‎
+‎      } catch (error) {
+‎        if (error.name !== "AbortError") {
+‎          inviteStatus.textContent =
+‎            "SHARING UNAVAILABLE. TRY COPYING THE LINK.";
+‎        }
+‎      }
+‎    } else {
+‎      await copyInvitation();
+‎    }
+‎  });
+‎})();
+‎</script>
+‎
+‎</body>
+‎</html>
